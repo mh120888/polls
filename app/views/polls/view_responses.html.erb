@@ -1,0 +1,8 @@
+<h1><%= @poll.question %></h1>
+
+<h2>Responses</h2>
+<ol>
+  <% @responses.each do |response| %>
+  <li><%= response.answer %></li>
+  <% end %>
+</ol>

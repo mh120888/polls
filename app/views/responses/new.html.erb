@@ -1,0 +1,9 @@
+<h1>Take Poll</h1>
+
+<h2><%= @poll.question %></h2>
+
+<%= simple_form_for(@response) do |f| %>
+  <%= f.input :poll_id, as: :hidden, input_html: { value: params[:poll] } %>
+  <%= f.input :answer, label: false, collection: @poll.options.map(&:answer), as: @poll.answer_type %>
+  <%= f.submit %>
+<% end %>
