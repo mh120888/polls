@@ -15,10 +15,13 @@
   <h3>Options</h3>
 
   <%= f.input :answer_type, label: 'Display options as:', collection: ['radio_buttons', 'check_boxes'] %><br>
-  <%= f.fields_for :options do |option| %><br>
-    <%= render 'option_fields', f: option %>
-  <% end %>
-  <%= link_to_add_association 'Add an option', f, :options %>
+  <div>
+    <%= f.fields_for :options do |option| %><br>
+      <%= render 'option_fields', f: option %>
+    <% end %>
+    <hr>
+    <%= link_to_add_association 'Add an option', f, :options %>
+  </div>
   <br>
   <br>
   <%= f.submit %>
